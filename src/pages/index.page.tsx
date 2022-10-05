@@ -39,7 +39,7 @@ export default function IndexPage (props: IndexPageProps): JSX.Element {
       }, new BigNumber(0)).toString())
 
       setAmountDFI(filteredSwaps.reduce((totalTo, data) => {
-        return totalTo.plus(data.to?.amount!)
+        return totalTo.plus(data.to?.amount ?? 0)
       }, new BigNumber(0)).toString())
     })
   }, [next])
